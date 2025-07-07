@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushin K - Cyber Security Engineer</title>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Orbitron:wght@400;700&display=swap');
+
+    /* Tailwind CSS Generated Output (minified) */
+    *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:theme(borderColor.DEFAULT, currentColor)}:root{--tw-bg-opacity:1;--tw-text-opacity:1;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000}:where([hidden]){display:none}.h-full{height:100%}.flex{display:flex}.grid{display:grid}.list-disc{list-style-type:disc}.list-inside{list-style-position:inside}.flex-col{flex-direction:column}.flex-1{flex:1 1 0%}.justify-center{justify-content:center}.gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.space-y-1>:not(:last-child){margin-bottom:.25rem}.space-y-3>:not(:last-child){margin-bottom:.75rem}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.rounded-lg{border-radius:.5rem}.border{border-width:1px}.border-green-400{--tw-border-opacity:1;border-color:rgb(74 222 128 / var(--tw-border-opacity))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.p-3{padding:.75rem}.p-4{padding:1rem}.px-3{padding-left:.75rem;padding-right:.75rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.text-center{text-align:center}.font-['Orbitron']{font-family:'Orbitron',sans-serif}.text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.font-semibold{font-weight:600}.font-bold{font-weight:700}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity))}.hover\:underline:hover{text-decoration-line:underline}.hover\:bg-green-400\/20:hover{background-color:rgb(74 222 128 / 0.2)}.w-1\/4{width:25%}.w-3\/4{width:75%}::selection{background-color:#00ff9f;color:#0b0c10}
+
+    /* Custom Styles */
+    html, body, #root {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Roboto Mono', monospace;
+      color: #e5e7eb;
+      background: linear-gradient(to bottom, #0b0c10, #1a202c);
+      position: relative;
+    }
+    .star-field {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite alternate;
+    }
+    .comet {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #00ff9f;
+      box-shadow: 0 0 10px #00ff9f, 0 0 20px #00ff9f;
+      animation: comet 5s linear infinite;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.8; }
+    }
+    @keyframes comet {
+      0% { transform: translate(100vw, -100vh); opacity: 1; }
+      100% { transform: translate(-100vw, 100vh); opacity: 0; }
+    }
+    .terminal-glow {
+      text-shadow: 0 0 10px rgba(0, 255, 159, 0.7), 0 0 20px rgba(0, 255, 159, 0.4);
+    }
+    .section-card {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 255, 159, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 255, 159, 0.5);
+    }
+    .tab {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .tab:hover {
+      background-color: rgba(0, 255, 159, 0.2);
+    }
+    .tab.active {
+      background-color: rgba(0, 255, 159, 0.4);
+      color: #00ff9f;
+      border-bottom: 2px solid #00ff9f;
+    }
+    .blink {
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="star-field" id="star-field"></div>
+  <div id="root"></div>
+  <script>
+    const { useState, useEffect } = React;
+
+    const App = () => {
+      const [activeTab, setActiveTab] = useState('summary');
+
+      useEffect(() => {
+        const starField = document.getElementById('star-field');
+        for (let i = 0; i < 150; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          star.style.width = `${Math.random() * 3}px`;
+          star.style.height = star.style.width;
+          star.style.left = `${Math.random() * 100}vw`;
+          star.style.top = `${Math.random() * 100}vh`;
+          star.style.animationDelay = `${Math.random() * 2}s`;
+          starField.appendChild(star);
+        }
+        for (let i = 0; i < 5; i++) {
+          const comet = document.createElement('div');
+          comet.className = 'comet';
+          comet.style.left = `${Math.random() * 50}vw`;
+          comet.style.top = `${Math.random() * 50}vh`;
+          comet.style.animationDelay = `${Math.random() * 5}s`;
+          starField.appendChild(comet);
+        }
+      }, []);
+
+      const sections = {
+        summary: React.createElement(
+          'div',
+          { className: 'p-4' },
+          React.createElement('h2', { className: 'text-xl font-bold text-green-400 terminal-glow mb-3' }, 'Professional Summary'),
+          React.createElement(
+            'p',
+            { className: 'text-xs leading-relaxed' },
+            'Information Security Software Engineer with over 6 years of experience in developing and testing high-demand security software. Specialized in system design, AI agents, prompt engineering, information security, and backend/API development.'
+          ),
+          React.createElement(
+            'ul',
+            { className: 'list-disc list-inside text-xs mt-3 space-y-1' },
+            React.createElement('li', null, 'Proficient in Python, JavaScript/TypeScript, C/C++'),
+            React.createElement('li', null, 'Skilled in MySQL, PostgreSQL, MongoDB, Scylla DB, Cassandra DB'),
+            React.createElement('li', null, 'Expert in Flask, Django, Next.js, Node.js, Electron, React C/C++'),
+            React.createElement('li', null, 'Experienced in IDS, IPS, Firewalls, DDoS Mitigation, Cloud Security, API Security'),
+            React.createElement('li', null, 'Proficient in RESTful APIs, GraphQL, WebSockets, and security testing tools (Burp Suite, OWASP ZAP, Wireshark)')
+          )
+        ),
+        experience: React.createElement(
+          'div',
+          { className: 'p-4' },
+          React.createElement('h2', { className: 'text-xl font-bold text-green-400 terminal-glow mb-3' }, 'Work Experience'),
+          React.createElement(
+            'div',
+            { className: 'space-y-3' },
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Information Security Software Engineer, Lumen Technologies, Bengaluru'),
+              React.createElement('p', { className: 'text-xs text-gray-400' }, 'Dec 2020 - Present (4y 6m)'),
+              React.createElement(
+                'ul',
+                { className: 'list-disc list-inside text-xs mt-1 space-y-1' },
+                React.createElement('li', null, 'Developed automated security testing pipeline using Django, reducing testing time by 65% and enhancing coverage'),
+                React.createElement('li', null, 'Configured Network Protection Services and GRE, achieving 98% customer satisfaction'),
+                React.createElement('li', null, 'Performed network security verification with internal tools, configured Nokia/Juniper routers'),
+                React.createElement('li', null, 'Configured Fortinet Firewalls and Arbor DDoS protection devices for efficient service delivery')
+              )
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Networking Engineer - Python Network Automation, Tejas Networks, Bengaluru'),
+              React.createElement('p', { className: 'text-xs text-gray-400' }, 'Jan 2019 - Dec 2020 (1y 11m)'),
+              React.createElement(
+                'ul',
+                { className: 'list-disc list-inside text-xs mt-1 space-y-1' },
+                React.createElement('li', null, 'Automated network operations with Python, streamlining processes and reducing time by 85%'),
+                React.createElement('li', null, 'Delivered 400+ Root Cause Analyses (RCA) and Plans of Action (POA), achieving 95% customer satisfaction'),
+                React.createElement('li', null, 'Tested network devices in lab environments, reproduced bugs for troubleshooting'),
+                React.createElement('li', null, 'Conducted security testing and supported customer activation calls')
+              )
+            )
+          )
+        ),
+        projects: React.createElement(
+          'div',
+          { className: 'p-4' },
+          React.createElement('h2', { className: 'text-xl font-bold text-green-400 terminal-glow mb-3' }, 'Projects'),
+          React.createElement(
+            'div',
+            { className: 'space-y-3' },
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Network Audit Tool (Lumen Technologies)'),
+              React.createElement('p', { className: 'text-xs' }, 'Python, Django, SQL, Linux, HTML, CSS'),
+              React.createElement('p', { className: 'text-xs mt-1' }, 'Developed a tool to automate network assessments, analyze configurations, and generate compliance reports. Features include device discovery and an interactive dashboard.')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'DDoS Build and Activation Tool (Lumen Technologies)'),
+              React.createElement('p', { className: 'text-xs' }, 'Python, Django, Arbor, Nokia/Juniper Routers'),
+              React.createElement('p', { className: 'text-xs mt-1' }, 'Web-based tool integrating with Arbor and routers for real-time DDoS mitigation and customer activation.')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Network Automation Script (Tejas Networks)'),
+              React.createElement('p', { className: 'text-xs' }, 'Python, RedHat Linux, Proxmox, Switch, Router'),
+              React.createElement('p', { className: 'text-xs mt-1' }, 'Automated configuration and management of networking tools, enhancing operational efficiency.')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Personal Projects'),
+              React.createElement(
+                'ul',
+                { className: 'list-disc list-inside text-xs space-y-1' },
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement('a', { href: 'https://github.com/sushink70/anglerC2', className: 'text-green-400 hover:underline' }, 'Command and Control Server'),
+                  ' (Python, PostgreSQL, Nginx, Django)'
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement('a', { href: 'https://github.com/sushink70/memErase', className: 'text-green-400 hover:underline' }, 'MemErase'),
+                  ' (C++, Deep Memory Erase Tool)'
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement('a', { href: 'https://github.com/sushink70', className: 'text-green-400 hover:underline' }, 'Authentication & Payment System'),
+                  ' (Django, Next.js, Stripe, FastAPI)'
+                )
+              )
+            )
+          )
+        ),
+        skills: React.createElement(
+          'div',
+          { className: 'p-4' },
+          React.createElement('h2', { className: 'text-xl font-bold text-green-400 terminal-glow mb-3' }, 'Technical Skills'),
+          React.createElement(
+            'div',
+            { className: 'grid grid-cols-2 gap-2 text-xs' },
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'font-semibold' }, 'Languages'),
+              React.createElement('p', null, 'Python, JavaScript/TypeScript, C/C++, Bash, PowerShell')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'font-semibold' }, 'Frameworks & Libraries'),
+              React.createElement('p', null, 'Flask, Django, Next.js, Node.js, React, React Native, Tailwind CSS, Apollo GraphQL')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'font-semibold' }, 'Databases & Tools'),
+              React.createElement('p', null, 'MySQL, PostgreSQL, MongoDB, Scylla DB, Cassandra, Docker, Kubernetes, Jenkins, Git')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'font-semibold' }, 'Cybersecurity'),
+              React.createElement('p', null, 'IDS, IPS, Firewalls, CCNA/CCNP Security, CEHv11, SIEM, DDoS Mitigation, Burp Suite, Wireshark, OWASP ZAP, Postman, Metasploit')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'font-semibold' }, 'Cloud & OS'),
+              React.createElement('p', null, 'AWS, Google Cloud, Linux (Ubuntu, RHEL, Kali), Windows 11')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'font-semibold' }, 'Testing & CI/CD'),
+              React.createElement('p', null, 'Postman, Burp Suite, Playwright, Jest, GitHub Actions')
+            )
+          )
+        ),
+        education: React.createElement(
+          'div',
+          { className: 'p-4' },
+          React.createElement('h2', { className: 'text-xl font-bold text-green-400 terminal-glow mb-3' }, 'Education & Certifications'),
+          React.createElement(
+            'div',
+            { className: 'space-y-3' },
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Bachelor of Engineering (Electronics & Communication)'),
+              React.createElement('p', { className: 'text-xs' }, 'Anna University, Chennai (2016)')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Higher Secondary Education (Computer Science)'),
+              React.createElement('p', { className: 'text-xs' }, 'Kerala State Board (2012)')
+            ),
+            React.createElement(
+              'div',
+              null,
+              React.createElement('h3', { className: 'text-sm font-semibold' }, 'Certifications'),
+              React.createElement(
+                'ul',
+                { className: 'list-disc list-inside text-xs space-y-1' },
+                React.createElement('li', null, 'Certified Ethical Hacker V11 (EC-Council, 2021-2022)'),
+                React.createElement('li', null, 'CCNA, CCNP R&S and Security (Networkers Home, 2019)'),
+                React.createElement('li', null, 'Certified English Professional (Cambridge English Academy, 2024)'),
+                React.createElement('li', null, 'Emertex Certified Embedded C Programming Professional (2017-2018)')
+              )
+            )
+          )
+        ),
+      };
+
+      return React.createElement(
+        'div',
+        { className: 'h-full flex flex-col p-3' },
+        React.createElement(
+          'div',
+          { className: 'text-center mb-4' },
+          React.createElement(
+            'h1',
+            { className: 'text-3xl font-bold text-green-400 terminal-glow font-[\'Orbitron\']' },
+            'Sushin K ',
+            React.createElement('span', { className: 'blink' }, '█')
+          ),
+          React.createElement('p', { className: 'text-sm text-gray-300' }, 'Information Security Software Engineer'),
+          React.createElement(
+            'div',
+            { className: 'flex justify-center gap-3 mt-2 text-xs' },
+            React.createElement('a', { href: 'tel:+919074958879', className: 'text-green-400 hover:underline' }, '+91 9074958879'),
+            React.createElement('a', { href: 'mailto:sushink70@gmail.com', className: 'text-green-400 hover:underline' }, 'sushink70@gmail.com'),
+            React.createElement('a', { href: 'https://github.com/sushink70', className: 'text-green-400 hover:underline' }, 'GitHub'),
+            React.createElement('a', { href: 'https://linkedin.com/in/sushink70', className: 'text-green-400 hover:underline' }, 'LinkedIn')
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'flex flex-1 gap-3' },
+          React.createElement(
+            'div',
+            { className: 'w-1/4 section-card rounded-lg p-3' },
+            React.createElement(
+              'nav',
+              { className: 'flex flex-col gap-1' },
+              Object.keys(sections).map((tab) =>
+                React.createElement(
+                  'button',
+                  {
+                    key: tab,
+                    className: `tab text-left px-3 py-2 rounded text-xs ${activeTab === tab ? 'active' : ''}`,
+                    onClick: () => setActiveTab(tab),
+                  },
+                  tab.charAt(0).toUpperCase() + tab.slice(1)
+                )
+              )
+            )
+          ),
+          React.createElement('div', { className: 'w-3/4 section-card rounded-lg overflow-auto' }, sections[activeTab])
+        )
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(App));
+  </script>
+</body>
+</html>
