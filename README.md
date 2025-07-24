@@ -1,9 +1,11 @@
 Hi there 👋 I'm Sushin K
+
 I'm an Information Security Software Engineer with over 6 years of experience in network security, automation, and full-stack development. Based in Bengaluru, I specialize in building secure, scalable systems and automating network operations to enhance efficiency and reliability. Passionate about cybersecurity, system design, and full-stack web development, I thrive on solving complex technical challenges.
+
 🔭 I’m currently working on:
 
 Developing advanced network security tools and automation scripts at Lumen Technologies.
-Enhancing DDoS mitigation systems and network audit tools using Python, Django, and Arbor.
+Enhancing DDoS mitigation systems and network audit tools using Rust, Python, Django, and Arbor.
 Personal projects including a Command and Control Server, Authentication & Payment Systems, and a Deep Memory Erase Tool (MemErase).
 
 🌱 I’m currently learning:
@@ -33,7 +35,7 @@ Ethical hacking, penetration testing, and tools like Burp Suite, OWASP ZAP, and 
 📫 How to reach me:
 
 GitHub: sushink70
-Email: sushink70@gmail.com
+Email: sushink70@gmail.com | sushink70@protonmail.com
 LinkedIn: sushink70
 
 😄 Pronouns: He/Him
