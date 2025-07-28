@@ -1,6 +1,8 @@
-Hi there 👋 I'm Sushin K
+Hi there 👋 I'm Sushin K 
 
-I'm an Information Security Software Engineer with over 6 years of experience in network security, automation, and full-stack development. Based in Bengaluru, I specialize in building secure, scalable systems and automating network operations to enhance efficiency and reliability. Passionate about cybersecurity, system design, and full-stack web development, I thrive on solving complex technical challenges.
+I'm an Information Security Software Engineer with over 6 years and 7 months of experience in Software development, cybersecurity and backend development. Based in Bengaluru, I specialize in building secure, scalable systems and automating network operations to enhance efficiency and reliability. Passionate about software development, cybersecurity, system design, and full-stack web development, I thrive on solving complex technical challenges.
+
+❤️ I'm a Rust 🦀 lover.
 
 🔭 I’m currently working on:
 
