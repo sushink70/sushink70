@@ -39,6 +39,7 @@ Ethical hacking, penetration testing, and tools like Burp Suite, OWASP ZAP, and 
 GitHub: sushink70
 Email: sushink70@gmail.com | sushink70@protonmail.com
 LinkedIn: sushink70
+Website: https://sushink70.github.io/sushink70/
 
 😄 Pronouns: He/Him
 ⚡ Fun fact: I’ve delivered over 400 Root Cause Analyses (RCAs) and reduced network configuration times by 85% through Python automation!
