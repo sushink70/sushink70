@@ -2,10 +2,9 @@ Hi there 👋 I'm Sushin K
 
 I'm an Information Security Software Engineer with over 6 years and 7 months of experience in Software development, cybersecurity and backend development. Based in Bengaluru, I specialize in building secure, scalable systems and automating network operations to enhance efficiency and reliability. Passionate about software development, cybersecurity, system design, and full-stack web development, I thrive on solving complex technical challenges.
 
-❤️ I'm a Rust 🦀 lover.
-
 🔭 I’m currently working on:
 
+❤️ I'm a Rust 🦀 lover. Focusing on Rust-based software development.  
 Developing advanced network security tools and automation scripts at Lumen Technologies.
 Enhancing DDoS mitigation systems and network audit tools using Rust, Python, Django, and Arbor.
 Personal projects including a Command and Control Server, Authentication & Payment Systems, and a Deep Memory Erase Tool (MemErase).
