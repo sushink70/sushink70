@@ -45,7 +45,8 @@ Website: https://sushink70.github.io/sushink70/
 
 🛠️ My Tech Stack
 
-Languages: Python, JavaScript/TypeScript, C/C++, Bash, PowerShell
+Languages: Rust, Scala, Haskell, Python, JavaScript/TypeScript, C/C++, Bash, PowerShell
+Data Structures and Algorithms: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, and Hash Tables. Common algorithms include Searching, Sorting, Recursion, Dynamic Programming, and Graph algorithms.
 Frameworks & Libraries: Django, Flask, NextJS, ReactJS, React-Native, Tailwind CSS, NodeJS, ElectronJS, Prisma, Apollo GraphQL
 Databases: MySQL, PostgreSQL, MongoDB, Scylla DB, Cassandra DB
 Security Tools: Burp Suite, OWASP ZAP, Wireshark, Postman, Metasploit, Nuclei, PentestsGPT
