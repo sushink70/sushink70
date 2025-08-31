@@ -5,12 +5,14 @@ I'm an Information Security Software Engineer with over 6 years and 7 months of 
 🔭 I’m currently working on:
 
 ❤️ I'm a Rust 🦀 lover. Focusing on Rust-based software development.  
+
 Developing advanced network security tools and automation scripts at Lumen Technologies.
 Enhancing DDoS mitigation systems and network audit tools using Rust, Python, Django, and Arbor.
 Personal projects including a Command and Control Server, Authentication & Payment Systems, and a Deep Memory Erase Tool (MemErase).
 
 🌱 I’m currently learning:
 
+Advanced DSA, Contributing to open-source projects, Cyber security and Bug bounty practices.
 Advanced cloud security practices on AWS and Google Cloud.
 Deepening expertise in container orchestration with Docker and Kubernetes.
 Exploring AI-driven security solutions, including prompt engineering and LLM applications.
