@@ -43,6 +43,7 @@ LinkedIn: sushink70
 Website: https://sushink70.github.io/sushink70/
 
 😄 Pronouns: He/Him
+
 ⚡ Fun fact: I’ve delivered over 400 Root Cause Analyses (RCAs) and reduced network configuration times by 85% through Python automation!
 
 🛠️ My Tech Stack
