@@ -86,3 +86,20 @@ Full-stack web and mobile application development
 Cloud infrastructure and DevOps
 
 Check out my GitHub for more projects and contributions!
+
+⚠️ Important Notice  
+
+I create and support software and other technology projects strictly for **positive and ethical purposes**.  
+By using any of my code, you agree to the following:  
+
+- ❌ You must not use my work for illegal, harmful, or unethical activities.  
+- ❌ My code is strictly prohibited from being used in:  
+  - Gambling systems  
+  - Financial exploitation (e.g., interest/usury-based money generation)  
+  - NSFW or adult content  
+  - Any project that is against humanity or causes harm  
+
+✅ My intention is to contribute to technology that benefits people, promotes innovation, and serves society in a good way.  
+
+I am **not responsible** for any misuse, damages, or consequences caused by others who ignore these terms. Please respect this principle and help build a better tech ecosystem.
+
