@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushin K - Information Security Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --secondary: #0ea5e9;
+      --accent: #06b6d4;
+      --dark: #0f172a;
+      --gray: #334155;
+      --light-gray: #64748b;
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Section */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+      color: white;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      font-size: 0.95rem;
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.95;
+    }
+
+    .contact-item svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .contact-item a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    main {
+      padding: 50px 0;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--primary);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    /* Professional Summary */
+    .summary-content {
+      background: var(--surface);
+      padding: 30px;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary);
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .summary-content p {
+      margin-bottom: 15px;
+    }
+
+    .highlight-skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .highlight-skill {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .highlight-skill::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* Experience Section */
+    .experience-item {
+      margin-bottom: 40px;
+      padding: 25px;
+      background: var(--surface);
+      border-radius: 10px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .company {
+      color: var(--light-gray);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .duration {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .achievements {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .achievements li {
+      padding-left: 25px;
+      margin-bottom: 10px;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .achievements li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .project-company {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      margin-bottom: 12px;
+    }
+
+    .project-description {
+      color: var(--text);
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-tag {
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid #bfdbfe;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-category {
+      background: var(--surface);
+      padding: 25px;
+      border-radius: 10px;
+      border: 2px solid #e2e8f0;
+    }
+
+    .skill-category h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-item {
+      background: white;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--text);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Education & Certifications */
+    .education-item, .cert-item {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .edu-title, .cert-title {
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .edu-institution, .cert-issuer {
+      color: var(--light-gray);
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+
+    .edu-year, .cert-year {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    .print-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .print-button:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    }
+
+    @media print {
+      .print-button {
+        display: none;
+      }
+      header {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      body {
+        font-size: 11pt;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .tagline {
+        font-size: 1.2rem;
+      }
+      .contact-info {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .experience-header {
+        flex-direction: column;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .print-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <h1>Sushin K</h1>
+      <p class="tagline">Information Security Software Engineer</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          <a href="mailto:sushink70@gmail.com">sushink70@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <span>+91 9074958879</span>
+        </div>
+        <div class="contact-item">
+          <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"/></svg>
+          <a href="https://github.com/sushink70" target="_blank">github.com/sushink70</a>
+        </div>
+        <div class="contact-item">
+          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/></svg>
+          <a href="https://linkedin.com/in/sushink70" target="_blank">linkedin.com/in/sushink70</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Professional Summary -->
+    <section id="summary">
+      <h2>Professional Summary</h2>
+      <div class="summary-content">
+        <p>Results-driven Information Security Software Engineer with over <strong>6+ years of experience</strong> developing and testing high-demand security software. Specialized in software development, system design, cybersecurity, and backend/API development with a proven track record of delivering scalable, secure solutions.</p>
+        <p>Expert in building automated security testing pipelines, configuring enterprise-grade network protection services, and implementing DDoS mitigation strategies. Passionate about leveraging cutting-edge technologies to protect critical infrastructure and enhance organizational security postures.</p>
+        <div class="highlight-skills">
+          <div class="highlight-skill">Expert in Rust, Python, JavaScript/TypeScript, C/C++</div>
+          <div class="highlight-skill">Cloud Security & Infrastructure (AWS, GCP)</div>
+          <div class="highlight-skill">Database Design (PostgreSQL, MongoDB, Scylla DB)</div>
+          <div class="highlight-skill">API Development (REST, GraphQL, WebSockets)</div>
+          <div class="highlight-skill">Network Security (IDS, IPS, Firewalls, DDoS)</div>
+          <div class="highlight-skill">AI/ML Integration & Prompt Engineering</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3>Information Security Software Engineer</h3>
+            <p class="company">Lumen Technologies • Bengaluru, India</p>
+          </div>
+          <span class="duration">Dec 2020 - Present (4y 6m)</span>
+        </div>
+        <ul class="achievements">
+          <li>Developed automated security testing pipeline using Django, reducing testing time by <strong>65%</strong> and enhancing test coverage across all network protection services</li>
+          <li>Configured and deployed Network Protection Services and GRE tunnels, achieving <strong>98% customer satisfaction</strong> rate with zero critical security incidents</li>
+          <li>Performed comprehensive network security verification using internal tools, configured Nokia/Juniper routers for high-availability security services</li>
+          <li>Implemented Fortinet Firewall configurations and Arbor DDoS protection devices for 100+ enterprise clients, ensuring efficient service delivery and threat mitigation</li>
+          <li>Led security audit initiatives identifying and remediating critical vulnerabilities, improving overall security posture by 40%</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3>Network Engineer - Python Automation</h3>
+            <p class="company">Tejas Networks • Bengaluru, India</p>
+          </div>
+          <span class="duration">Jan 2019 - Dec 2020 (1y 11m)</span>
+        </div>
+        <ul class="achievements">
+          <li>Automated network operations with Python scripts, streamlining processes and reducing manual intervention time by <strong>85%</strong></li>
+          <li>Delivered <strong>400+ Root Cause Analyses (RCA)</strong> and Plans of Action (POA), achieving 95% customer satisfaction through thorough investigation and resolution</li>
+          <li>Conducted security testing of network devices in lab environments, reproduced and documented bugs for development team resolution</li>
+          <li>Supported customer activation calls and provided technical troubleshooting for network security implementations</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3 class="project-title">Network Audit Tool</h3>
+          <p class="project-company">Lumen Technologies</p>
+          <p class="project-description">Comprehensive network assessment platform with automated device discovery, configuration analysis, and compliance reporting through an interactive web dashboard. Reduced audit time by 70%.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">DDoS Build & Activation Tool</h3>
+          <p class="project-company">Lumen Technologies</p>
+          <p class="project-description">Real-time DDoS mitigation platform integrating with Arbor APS and network routers for instant threat response. Automated customer activation reducing deployment time from hours to minutes.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">Arbor APS</span>
+            <span class="tech-tag">Nokia/Juniper</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Command & Control Server (anglerC2)</h3>
+          <p class="project-company">Personal Project</p>
+          <p class="project-description">Advanced C2 framework built for security research and penetration testing operations. Features encrypted communications, modular architecture, and comprehensive agent management.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Nginx</span>
+            <span class="tech-tag">Django</span>
+          </div>
+          <a href="https://github.com/sushink70/anglerC2" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">MemErase</h3>
+          <p class="project-company">Personal Project</p>
+          <p class="project-description">Deep memory erasure tool for secure data sanitization at the hardware level. Ensures complete wipe of sensitive data from RAM and system caches to prevent forensic recovery.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">Memory Management</span>
+            <span class="tech-tag">Low-level Programming</span>
+          </div>
+          <a href="https://github.com/sushink70/memErase" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Network Automation Suite</h3>
+          <p class="project-company">Tejas Networks</p>
+          <p class="project-description">Automated configuration and management system for networking tools, enhancing operational efficiency and reducing human error in device provisioning and monitoring.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">RedHat Linux</span>
+            <span class="tech-tag">Proxmox</span>
+            <span class="tech-tag">Network Automation</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Authentication & Payment System</h3>
+          <p class="project-company">Personal Project</p>
+          <p class="project-description">Full-stack authentication and payment processing system with JWT-based auth, Stripe integration, and secure API endpoints. Scalable architecture supporting thousands of concurrent users.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Stripe API</span>
+            <span class="tech-tag">FastAPI</span>
+          </div>
+          <a href="https://github.com/sushink70" class="project-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="skill-list">
+            <span class="skill-item">Rust</span>
+            <span class="skill-item">Python</span>
+            <span class="skill-item">JavaScript/TypeScript</span>
+            <span class="skill-item">C/C++</span>
+            <span class="skill-item">Bash</span>
+            <span class="skill-item">PowerShell</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Frameworks & Libraries</h3>
+          <div class="skill-list">
+            <span class="skill-item">Django</span>
+            <span class="skill-item">Flask</span>
+            <span class="skill-item">Next.js</span>
+            <span class="skill-item">React/React Native</span>
+            <span class="skill-item">Node.js</span>
+            <span class="skill-item">Electron</span>
+            <span class="skill-item">Tailwind CSS</span>
+            <span class="skill-item">Apollo GraphQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Databases</h3>
+          <div class="skill-list">
+            <span class="skill-item">PostgreSQL</span>
+            <span class="skill-item">MySQL</span>
+            <span class="skill-item">MongoDB</span>
+            <span class="skill-item">Scylla DB</span>
+            <span class="skill-item">Cassandra</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Cybersecurity Tools</h3>
+          <div class="skill-list">
+            <span class="skill-item">Burp Suite</span>
+            <span class="skill-item">OWASP ZAP</span>
+            <span class="skill-item">Wireshark</span>
+            <span class="skill-item">Metasploit</span>
+            <span class="skill-item">Nmap</span>
+            <span class="skill-item">Fortinet</span>
+            <span class="skill-item">Arbor APS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Cloud & DevOps</h3>
+          <div class="skill-list">
+            <span class="skill-item">AWS</span>
+            <span class="skill-item">Google Cloud</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">Kubernetes</span>
+            <span class="skill-item">Jenkins</span>
+            <span class="skill-item">GitHub Actions</span>
+            <span class="skill-item">Terraform</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Security Domains</h3>
+          <div class="skill-list">
+            <span class="skill-item">IDS/IPS</span>
+            <span class="skill-item">Firewall Configuration</span>
+            <span class="skill-item">DDoS Mitigation</span>
+            <span class="skill-item">API Security</span>
+            <span class="skill-item">Cloud Security</span>
+            <span class="skill-item">SIEM</span>
+            <span class="skill-item">Penetration Testing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education">
+      <h2>Education & Certifications</h2>
+      
+      <div class="education-item">
+        <h3 class="edu-title">Bachelor of Engineering - Electronics & Communication</h3>
+        <p class="edu-institution">Anna University, Chennai, India</p>
+        <p class="edu-year">2012 - 2016</p>
+      </div>
+
+      <div class="education-item">
+        <h3 class="edu-title">Higher Secondary Education - Computer Science</h3>
+        <p class="edu-institution">Kerala State Board</p>
+        <p class="edu-year">2012</p>
+      </div>
+
+      <h2 style="margin-top: 40px;">Certifications</h2>
+      
+      <div class="cert-item">
+        <h3 class="cert-title">Certified Ethical Hacker (CEH) v11</h3>
+        <p class="cert-issuer">EC-Council</p>
+        <p class="cert-year">2021 - 2022</p>
+      </div>
+
+      <div class="cert-item">
+        <h3 class="cert-title">CCNA & CCNP R&S and Security</h3>
+        <p class="cert-issuer">Networkers Home</p>
+        <p class="cert-year">2019</p>
+      </div>
+
+      <div class="cert-item">
+        <h3 class="cert-title">Certified English Professional</h3>
+        <p class="cert-issuer">Cambridge English Academy</p>
+        <p class="cert-year">2024</p>
+      </div>
+
+      <div class="cert-item">
+        <h3 class="cert-title">Certified Embedded C Programming Professional</h3>
+        <p class="cert-issuer">Emertex</p>
+        <p class="cert-year">2017 - 2018</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Sushin K. All rights reserved.</p>
+      <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Available for freelance opportunities and full-time positions</p>
+    </div>
+  </footer>
+
+  <button class="print-button" onclick="window.print()">
+    📄 Download PDF
+  </button>
+</body>
+</html>
