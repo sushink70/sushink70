@@ -1,6 +1,22 @@
 # Hi there 👋 I'm Sushin K 
 
-I'm a **Cloud Security Software Engineer** with over 7 years of experience building secure, scalable cloud-native systems. Based in Bengaluru, I specialize in securing Kubernetes clusters, container runtimes, service meshes, and cloud infrastructure through code. I focus on security-first design for distributed systems, building tools that harden cloud workloads, and automating security controls at scale across AWS, GCP, and on-premise data centers.
+I'm a **Senior Cloud Security Software Engineer** with over 7+ years of experience building secure, scalable cloud-native systems. Based in Bengaluru, I specialize in securing Kubernetes clusters, container runtimes, service meshes, and cloud infrastructure through code. I focus on security-first design for distributed systems, building tools that harden cloud workloads, and automating security controls at scale across AWS, GCP, and on-premise data centers.
+
+## Core Skills:
+
+Languages: Go, Rust, Python, TypeScript, C/C++
+Core CS Concepts: Data Structures and Algorithms, OOPs concepts, Distributed systems, Concurrency
+patterns, CAP theorem, Event-driven architecture, Microservices patterns, Zero-trust architecture
+Cloud & Platforms: AWS, Azure, GCP, Kubernetes (EKS, GKE, AKS), RHEL, Crossplane, Terraform
+Containers & Observability: containerd, Docker, Helm, Prometheus, Grafana, OpenTelemetry, Pixie
+Kernel & Low-Level: eBPF, XDP, AppArmor, SELinux, BPF CO-RE, libbpf, bpftrace
+Security & Compliance: Falco, MITRE ATT&CK, SPIRE/SPIFFE, cert-manager, Tetragon, Harbor, Kyverno
+Networking & Mesh: BGP, NATS, mTLS, gRPC, CNI, Cilium, Calico, VXLAN, Gateway API
+Runtime & Execution: wasmcloud, Cloud Hypervisor, QEMU/KVM, Podman, Confidential Computing
+Libraries & SDKs: kube-rs, AWS SDK (Boto3, aws-sdk-go), GCP Client Libraries, Tokio, hyper, tonic (gRPC)
+Database & Data Infrastructure: PostgreSQL, pgaudit, MongoDB RBAC, Vitess, Redis, Apache Cassandra
+Security Practices: Secret rotation, Zero-trust networking, Defense in depth, Secure SDLC
+DevSecOps: GitHub Actions, GitLab CI, Jenkins, Argo (CD/Workflows/Rollouts/Events)
 
 ## 🔭 I'm currently working on:
 
@@ -59,8 +75,8 @@ I've automated security compliance across 1000+ cloud workloads and reduced cont
 
 ## 🛠️ Cloud Security Tech Stack
 
-**Core Languages**: Rust, Go, Python, C++, Bash  
-**Orchestration/Control Plane**: TypeScript, Python
+**Core Languages**: Rust, Go, Python, C/C++  
+**Orchestration/Control Plane**: TypeScript, Python, Bash
 
 ### Cloud Native & Kubernetes
 - **Platforms**: Kubernetes, OpenShift, EKS, GKE, AKS
